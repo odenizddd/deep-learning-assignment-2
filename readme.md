@@ -29,3 +29,9 @@ Then run one of the following scripts.
 ```bash
 python cnnae.py
 ```
+
+### LSTM AutoEncoder
+
+```bash
+python lstmae.py
+```

@@ -8,6 +8,8 @@ import torch
 import torch.optim as optim
 from LSTMAE import LSTMAutoencoder
 from DataLoader import DataLoaderFactory
+import numpy as np
+from sklearn.manifold import TSNE
 
 data_dir = "../../data/quickdraw_subset_np"
 
@@ -79,4 +81,36 @@ for i in range(1, n + 1):
     plt.title("Trained")
 
 plt.tight_layout()
+plt.show()
+
+print("Plotting t-SNE of Encoded Representations...")
+
+model.eval()
+
+embeddings = []
+labels = []
+
+n = train_loader.num_samples
+batch_size = 256
+
+with torch.no_grad():
+    for i in range(n // batch_size):
+        x, y = train_loader.get_batch(batch_size)
+        x = torch.from_numpy(x).to(device)
+        images = x / 255.0
+
+        _, latent = model(images)
+        embeddings.append(latent.cpu().numpy())
+        labels.append(y)
+
+
+embeddings = np.concatenate(embeddings, axis=0)
+labels = np.concatenate(labels, axis=0)
+
+tsne = TSNE(n_components=2, random_state=0)
+embeddings_2d = tsne.fit_transform(embeddings)
+
+plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1], c=labels, cmap="tab10", s=5)
+plt.colorbar()
+plt.title("2D t-SNE of Encoded Representations")
 plt.show()
