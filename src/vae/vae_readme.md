@@ -40,6 +40,21 @@ The models are trained to generate sketches from the QuickDraw dataset (28×28 g
 
 ## 4. Running the Implementation
 
+### Dataset Setup
+
+Before running the scripts, you need to set up the proper directory structure. The scripts expect specific folder names:
+
+```bash
+# While in the src/vae directory:
+
+# 1. Create a symbolic link to the QuickDraw dataset
+ln -s /path/to/your/quickdraw_subset_np quickdraw_subset_np
+
+# 2. Create a symbolic link from results to vae_results (if needed)
+# The scripts expect a folder named 'vae_results' but the actual results are stored in 'results'
+ln -s results vae_results
+```
+
 ### Train VAE Models
 
 To train all VAE models (RNN-CNN, CNN-CNN, and Conditional VAE):
@@ -63,12 +78,24 @@ To calculate Inception Score (IS) and Fréchet Inception Distance (FID):
 python evaluate_vae_metrics.py
 ```
 
+For a quicker evaluation with fewer samples:
+
+```bash
+python evaluate_vae_metrics.py --quick
+```
+
 ### Evaluate Samples with Classifier
 
 To evaluate generated samples using the pre-trained classifier:
 
 ```bash
 python evaluate_vae_samples.py
+```
+
+For a simplified evaluation:
+
+```bash
+python evaluate_vae_samples_simple.py
 ```
 
 ## 5. Results
