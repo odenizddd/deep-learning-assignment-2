@@ -137,7 +137,7 @@ Both metrics were calculated using a pre-trained InceptionV3 model to extract fe
 
 ## Classifier Evaluation
 
-We trained a separate MLP classifier to evaluate the quality of the generated samples. The classifier achieved good performance on the test set from the QuickDraw dataset:
+We trained the MLP classifier from the Assignment 1 to evaluate the quality of the generated samples. The classifier achieved good performance on the test set from the QuickDraw dataset:
 
 - **Rabbit class**: 80% accuracy with 75.4% average confidence
 - **Yoga class**: 80% accuracy with 75.6% average confidence  
