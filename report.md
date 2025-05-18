@@ -25,3 +25,11 @@ We used MSE loss to train the network for 10.000 steps, with an Adam Optimizer, 
 
 
 ### CNN AutoEncoder
+
+
+We used two CNNs similar to the LSTM AE above. The encoder is a CNN with 2 convolutional layers. The first layers maps single-channel input image onto a 16-channel feature map using 16 3x3 kernels with a stride of 2. The second convolutional layer maps the 16 features onto 32 features, which gives us 16x7x7 features. We map those onto a 64 dimensional latent space. Decoder has the same architecture in reverse.
+
+We train the CNN for 1.000 steps with an Adam optimizer, using a learning rate of 1e-3 and a batch size of 256. The training loss can be seen below.
+
+![Figure_4](https://github.com/user-attachments/assets/b5a571de-bd95-4bad-966c-29310e51ceb8)
+
