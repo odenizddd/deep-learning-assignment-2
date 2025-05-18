@@ -43,3 +43,12 @@ Some of the reconstructions can be seen below, along with comparisons with the o
 ![Figure_5](https://github.com/user-attachments/assets/3f0bea3e-c743-4a80-bb9f-57e7c0d78cdf)
 
 
+### Visualizing Latent Space Embeddings With TSNE
+
+We fed the whole dataset through the trained LSTM AE to get the latent space representation of every image. Then we used TSNE method to find the two most prominent features and project the latent space vectors onto that 2D space. The results are visualized below.
+
+![Figure_3](https://github.com/user-attachments/assets/fd395434-07c4-41e4-829d-76aa09623c5a)
+
+Some clusters are reasonably well-separated, for example blue, brown, gray, and cyan classes look very distinct from the rest of the data. However, boundaries are not very sharp, and there is a significant degree of overlap. Especially between the green class and the rest.
+
+
