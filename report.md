@@ -19,6 +19,9 @@ The hyperparameters of the network are as follows:
 - Latent Dimension: 128
 - Num of Layers Stacked: 2
 
-We used MSE loss to train the network for 10.000 steps, with an Adam Optimizer and a learning rate of 1e-3. The training loss can be seen below.
+We used MSE loss to train the network for 10.000 steps, with an Adam Optimizer, a learning rate of 1e-3, and a batch size of 256. The training loss can be seen below.
+
+![Figure_1](https://github.com/user-attachments/assets/51146b2b-5fc3-48b4-9523-ffb54a868b02)
+
 
 ### CNN AutoEncoder
