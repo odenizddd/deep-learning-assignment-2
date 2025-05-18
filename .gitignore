@@ -1,3 +1,5 @@
 env/
 data/
 __pycache__/
+src/vae/quickdraw_subset_np
+src/vae/vae_results
