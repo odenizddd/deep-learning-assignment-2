@@ -23,6 +23,11 @@ We used MSE loss to train the network for 10.000 steps, with an Adam Optimizer, 
 
 ![Figure_1](https://github.com/user-attachments/assets/51146b2b-5fc3-48b4-9523-ffb54a868b02)
 
+Some of the reconstructions can be seen below, along with comparisons with the outputs from an untrained AE.
+
+![Figure_2](https://github.com/user-attachments/assets/77a6bbca-bda2-4029-88c3-40fb774bdd67)
+
+
 
 ### CNN AutoEncoder
 
@@ -32,4 +37,9 @@ We used two CNNs similar to the LSTM AE above. The encoder is a CNN with 2 convo
 We train the CNN for 1.000 steps with an Adam optimizer, using a learning rate of 1e-3 and a batch size of 256. The training loss can be seen below.
 
 ![Figure_4](https://github.com/user-attachments/assets/b5a571de-bd95-4bad-966c-29310e51ceb8)
+
+Some of the reconstructions can be seen below, along with comparisons with the outputs from an untrained AE.
+
+![Figure_5](https://github.com/user-attachments/assets/3f0bea3e-c743-4a80-bb9f-57e7c0d78cdf)
+
 
